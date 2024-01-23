@@ -18,7 +18,7 @@ const Navbar = () => {
   useEffect(() => {
     document.documentElement.setAttribute(
       'data-prefers-color-scheme',
-      'dark',
+      'default',
     )
   }, [])
 
