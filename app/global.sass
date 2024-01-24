@@ -2,11 +2,16 @@
   --adm-color-primary: #2A6425
   --adm-button-border-radius: 0
   --adm-font-family: 'Montserrat', 'Helvetica Neue', helvetica, roboto, arial, sans-serif
+  --adm-font-size-main: 1rem
   .adm-button
     font-family: var(--adm-font-family)
 
+html
+  font-size: 100%
+
 body
   margin: 0
+  font-size: 1rem
 
 main
   min-height: calc(100vh - 98px)
@@ -14,6 +19,26 @@ main
 
 a
   text-decoration: none
+
+sup, sub
+  line-height: 1
+
+p, .p
+  font-size: 1rem
+  line-height: 1.5
+  margin-block: 1rem
+
+h1, h2, h3, h4
+  line-height: 1
+  font-weight: normal
+h1
+  font-size: 2.5rem
+h2
+  font-size: 2rem
+h3
+  font-size: 1.6rem
+h4
+  font-size: 1.2rem
 
 .adm-tabs-header
   border-bottom: 0
@@ -34,12 +59,26 @@ a
 .pad, .pad-x, .pad-r
   padding-right: 1rem
 
+.margin-0
+  margin: 0
+
 .text-center
   text-align: center
+.text-right
+  text-align: right
+.text-justify
+  text-align: justify
 .underline
   text-decoration: none
 .uppercase
   text-decoration: uppercase
+
+.font-color-primary
+  color: var(--adm-color-primary)
+.font-color-secondary
+  color: var(--adm-color-text-secondary)
+.font-color-weak
+  color: var(--adm-color-weak)
 
 .align-stretch
   align-items: stretch
@@ -61,3 +100,5 @@ a
     display: block
     width: 768px
     margin: auto
+  .heading
+    max-width: 537px
