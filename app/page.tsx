@@ -1,10 +1,11 @@
 'use client'
 
-import { Button, Card, Divider, Ellipsis, Grid, Image } from 'antd-mobile'
+import { Button, Card, Divider, Ellipsis, Grid } from 'antd-mobile'
 import Link from 'next/link'
-import { DownOutline, RightOutline } from 'antd-mobile-icons'
+import { DownOutline } from 'antd-mobile-icons'
 import Heading from './components/heading'
 import Title from './components/title'
+import styles from './home.module.sass'
 
 export default function Home() {
 
@@ -17,23 +18,15 @@ export default function Home() {
       <section className='container'>
         <div className='pad'>
           <div className='pad-y' />
-          <Grid columns={3} gap='1rem'>
-            <Grid.Item span={2}>
-              <Title title='[Mariah] Mah' style={{ marginTop: 0 }} />
-              <Heading
-                title='The 500 Most Influential Muslims In The World!'
-                weak 
-              />
-            </Grid.Item>
-            <Grid.Item>
-              <Card
-                style={{ background: 'var(--adm-color-box)' }}
-                bodyStyle={{ padding: '1rem 0 0' }}
-              >
-                <Image src='/images/mariah-mah.webp' width='100%' />
-              </Card>
-            </Grid.Item>
-          </Grid>
+          <Card
+            className={styles.mariah}
+          >
+            <Title title='[Mariah] Mah' style={{ marginTop: 0 }} />
+            <Heading
+              title='The 500 Most Influential Muslims In The World!'
+              weak 
+            />
+          </Card>
           <Ellipsis
             direction='end'
             rows={3}

@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation'
 import { Button, Image, List, Popup, Space, Tabs } from 'antd-mobile'
 import Link from 'next/link'
-import style from './navbar.module.sass'
+import styles from './navbar.module.sass'
 import { CloseOutline, MoreOutline } from 'antd-mobile-icons'
 import { useEffect, useState } from 'react'
 import { project_details } from '../_lib/project'
@@ -23,7 +23,7 @@ const Navbar = () => {
   }, [])
 
   const TabLink = ({ href, title }: { href: string, title: string }) => (
-    <Link className={`${style.link} ${style.tabItem}`} href={href}>{title}</Link>
+    <Link className={`${styles.link} ${styles.tabItem}`} href={href}>{title}</Link>
   )
 
   const navItems = [
@@ -36,10 +36,10 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={style.nav}>
+      <div className={styles.nav}>
         <Space justify='between' block className='align-stretch'>
           <Link href='/' onClick={() => setVisible(false)}>
-            <Button color='primary' className={style.height}>
+            <Button color='primary' className={styles.height}>
               <Space align='center' block>
                 <Image src='/images/chinamuslim.svg' height={`${iconSize}px`} />
                 <div dangerouslySetInnerHTML={{ __html: project_details.title_html }} />
@@ -60,16 +60,16 @@ const Navbar = () => {
                 <Tabs.Tab
                   key={tab.key}
                   title={<TabLink href={`/${tab.key}`} title={tab.title} />}
-                  className={`${style.height} ${style.tab}`}
+                  className={`${styles.height} ${styles.tab}`}
                 />
               )}
             </Tabs>
             <Button
               color='primary'
               onClick={() => setVisible(true)}
-              className={`hide-on-lg ${style.height}`}
+              className={`hide-on-lg ${styles.height}`}
             >
-              <MoreOutline fontSize={iconSize} className={style.more} />
+              <MoreOutline fontSize={iconSize} className={styles.more} />
             </Button>
           </>
         </Space>
@@ -92,7 +92,7 @@ const Navbar = () => {
             <Button
               color='primary'
               onClick={() => { setVisible(false) }}
-              className={style.height}
+              className={styles.height}
             >
               <CloseOutline fontSize={20} />
             </Button>
@@ -104,7 +104,7 @@ const Navbar = () => {
               <Link
                 key={item.key}
                 href={`/${item.key}`}
-                className={`${style.link} ${style.listLink} ${item.key === activeKey ? style.active : ''}`}
+                className={`${styles.link} ${styles.listLink} ${item.key === activeKey ? styles.active : ''}`}
                 onClick={() => setVisible(false)}
               >
                 <List.Item>
