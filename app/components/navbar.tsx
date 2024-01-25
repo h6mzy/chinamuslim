@@ -39,7 +39,11 @@ const Navbar = () => {
       <div className={styles.nav}>
         <Link href='/' onClick={() => setVisible(false)}>
           <div className={styles.home}>
-            <Image src='/images/chinamuslim.svg' height={`${iconSize}px`} />
+            <Image
+              src='/images/chinamuslim.svg'
+              height={`${iconSize}px`}
+              width='auto'
+            />
             <div dangerouslySetInnerHTML={{ __html: project_details.title_html }} />
           </div>
         </Link>
