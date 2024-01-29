@@ -85,6 +85,52 @@ h4
 .align-stretch
   align-items: stretch
 
+.lightbox-modal
+  .adm-center-popup-wrap
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    min-width: 100vw
+    max-width: 100vw
+    transform: none
+    > div
+      display: flex
+      height: 100%
+      width: 100%
+      align-items: stretch
+  .adm-modal-title
+    position: absolute
+    line-height: 1
+    padding: var(--adm-gap-sm) var(--adm-gap)
+    left: 0
+    right: 0
+    background: rgba(0, 0, 0, .5)
+    color: var(--adm-color-white)
+    font-weight: normal
+    margin-bottom: 0
+    height: 49px
+    box-sizing: border-box
+    display: flex
+    justify-content: center
+    align-items: center
+  .adm-center-popup-close
+    color: var(--adm-color-white)
+    width: 49px
+    height: 49px
+    right: 0
+    top: 0
+    background: rgba(0, 0, 0, .65)
+    box-sizing: border-box
+    display: flex
+    align-items: center
+    justify-content: center
+  .adm-modal-body,
+  .adm-modal-body:not(.adm-modal-with-image)
+    max-height: 100%
+    background: transparent
+    padding-top: 0
+
 .tabs-borderless
   .adm-tabs-header
     border-bottom: 0
