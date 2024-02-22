@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Card, Divider, Ellipsis, Grid } from 'antd-mobile'
+import { Button, Card, Divider, Ellipsis } from 'antd-mobile'
 import Link from 'next/link'
 import { DownOutline } from 'antd-mobile-icons'
 import Heading from './components/heading'
@@ -31,11 +31,13 @@ export default function Home() {
             className='p text-justify'
             content={`Mariah Mah a retired Singaporean educator in her 70's, has been working tirelessly Mariah Mah a retired Singaporean educator in her 70's, has been working tirelessly in the past 20 years to improve the lives of Muslims in China. She has been greatly involved in the Singapore Muslim outreach to poor Muslims in China. She was named by the Royal Islamic Strategic Studies Centre as one of the 500 most influential Muslims in the world in 2009 and has also been cited in a book published by The Prince Alwaleed Bin Talal Center for Muslim-Christian Understanding by Edmund A. Walsh from the School of Foreign Service Georgetown University - USA. She is the Honorary Chairman of Xiji Welfare Charity Centre (China) a government registered NGO in China's poorest region known as XIHAIGU (one of the world's poorest regions as recorded by UNESCO). As a result of the numerous charity projects initiated which benefitted and improve the lives of hundreds of farmers in the region, Sister was awarded the Honorary Citizen of Xiji County, Ningxia Province China.`}
           />
-          <Link href='/mariah-mah'>
-            <Button block fill='outline' style={{ '--border-color': 'var(--adm-color-light)' }}>
-              Read more
-            </Button>
-          </Link>
+          <div className='call-to-actions'>
+            <Link href='/mariah-mah'>
+              <Button block fill='outline' style={{ '--border-color': 'var(--adm-color-light)' }}>
+                Read more
+              </Button>
+            </Link>
+          </div>
         </div>
         <Divider />
       </section>
@@ -45,7 +47,7 @@ export default function Home() {
           <Video iframe={video} />
           <Heading title='2023 Zhang Jiachuan Zakat for the Aged Poor' />
           <p className='text-justify'>In April 2004, Late Brother Jaafar Mah set up the first Muslim NGO known as Zhang Jiachuan Charity Services Center. He was its main Chairman till his demise in May 2021 and Sister Mariah Mah took over the chairmanship to manage its community service charity projects like Distribution of Zakat, Sedaqah, Rice, Fidyah, Iftar Ramadan, Qurban and Aqiqah.</p>
-          <Grid columns={2} gap='var(--adm-gap-sm)' className='pad-t'>
+          <div className='call-to-actions'>
             <Link href='/project/2023-zhang-jiachuan-zakat-for-the-aged-poor'>
               <Button block fill='outline' style={{ '--border-color': 'var(--adm-color-light)' }}>
                 Read more
@@ -56,7 +58,7 @@ export default function Home() {
                 Contribute
               </Button>
             </Link>
-          </Grid>
+          </div>
         </div>
       </section>
     </main>

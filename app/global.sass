@@ -1,6 +1,6 @@
 :root:root
   --adm-color-primary: #2A6425
-  --adm-button-border-radius: 0
+  --adm-button-border-radius: .5rem
   --adm-gap: 1rem
   --adm-gap-sm: .5rem
   --adm-font-family: 'Montserrat', 'Helvetica Neue', helvetica, roboto, arial, sans-serif
@@ -84,6 +84,14 @@ h4
 
 .align-stretch
   align-items: stretch
+
+.call-to-actions
+  display: flex
+  gap: var(--adm-gap-sm)
+  justify-content: stretch
+  > *
+    min-width: 50%
+    flex: 1 1
 
 .lightbox-modal
   *:not(a), *:not(button)
@@ -176,3 +184,8 @@ h4
     margin: auto
   .heading
     max-width: 537px
+  .call-to-actions
+    justify-content: flex-start
+    > *
+      min-width: calc(100% / 3)
+      flex: 0 0
