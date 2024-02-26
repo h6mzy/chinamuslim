@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './global.sass'
+import 'react-medium-image-zoom/dist/styles.css'
 import Navbar from './components/navbar'
 import SiteFooter from './components/footer'
 import { project_details } from './_lib/project'
