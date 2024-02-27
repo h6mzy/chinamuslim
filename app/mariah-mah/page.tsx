@@ -16,7 +16,7 @@ export default function Home() {
   )
 
   const images = [
-    { src: '/images/cambridge-certs/1.webp', title: 'Cambridge Certificate 1' },
+    { src: '/images/cambridge-certs/1.webp' },
     { src: '/images/cambridge-certs/2.webp', title: 'Cambridge Certificate 2' },
     { src: '/images/cambridge-certs/3.webp', title: 'Cambridge Certificate 3' },
   ]
@@ -45,12 +45,9 @@ export default function Home() {
             <p>Besides being selected to be among 500 most influential Muslims in the world, she was honoured by Cambridge University Faculty of Islamic Arts for excellence in the promotion and service of Islam and the promotion of Chinese Muslim Culture in 2000.</p>
           </div>
           <Lightbox 
-            images={[
-              { src: '/images/cambridge-cert.webp', title: 'Cambridge Certificate 1' },
-              { src: '/images/cambridge-cert.webp', title: 'Cambridge Certificate 2' },
-              { src: '/images/cambridge-cert.webp', title: 'Cambridge Certificate 3' },
-            ]}
+            images={images}
             gridProps={{ columns: 3, gap: 'var(--adm-gap-sm)' }}
+            thumbnails={3}
           />
         </div>
       </section>

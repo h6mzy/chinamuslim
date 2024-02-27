@@ -1,8 +1,9 @@
 'use client'
 
-import { Button, Grid, GridProps, Image, Modal } from 'antd-mobile'
-import { LeftOutline, RightOutline } from 'antd-mobile-icons'
+import { Button, ButtonProps, Grid, GridProps, Image, Modal, Popover, Space } from 'antd-mobile'
+import { CloseOutline, InformationCircleOutline, LeftOutline, RightOutline } from 'antd-mobile-icons'
 import { useState } from 'react'
+import FixedAspectRatio from './fixed-aspect-ratio'
 
 export interface Copyright {
   name: string
@@ -31,41 +32,12 @@ const Lightbox = ({
   const maxed = thumbnails > len ? len : thumbnails
 
   const [imageIndex, setImageIndex] = useState(0)
+  const [visible, setVisible] = useState(false)
 
-  const openModal = () => {
-    Modal.alert({
-      className: 'lightbox-modal',
-      title: images[imageIndex].title || null,
-      content: 
-        <>
-          <Image
-            src={images[imageIndex].src}
-            width='100vw'
-            height='100vh'
-            alt='Photo of Cambridge Certificate'
-            fit='contain'
-          />
-          {len > 1 &&
-            <>
-              {imageIndex > 0 &&
-                <Button className='modal-prev' onClick={() => setImageIndex(imageIndex - 1)}>
-                  <LeftOutline fontSize={24} />
-                </Button>
-              }
-              {imageIndex < len - 1 &&
-                <Button className='modal-next' onClick={() => setImageIndex(imageIndex + 1)}>
-                  <RightOutline fontSize={24} />
-                </Button>
-              }
-            </>
-          }
-        </>,
-      showCloseButton: true,
-      closeOnMaskClick: true
-    })
-    return
-  }
-
+  const hasCaption = images[imageIndex].title
+  const hasPrev = len > 1 && imageIndex > 0
+  const hasNext = len > 1 && imageIndex < len - 1
+  
   const grid = (
     <Grid {...gridProps}>
       {images.slice(0, maxed).map((image, imageIndex) => {
@@ -74,15 +46,18 @@ const Lightbox = ({
             <a 
               onClick={() => {
                 setImageIndex(imageIndex)
-                openModal()
+                setVisible(true)
               }}
             >
-              <Image
-                src={image.src}
-                width='100%'
-                height='auto'
-                alt='Photo of Cambridge Certificate'
-              />
+              <FixedAspectRatio>
+                <Image
+                  src={image.src}
+                  width='100%'
+                  height='100%'
+                  alt='Photo of Cambridge Certificate'
+                  fit='cover'
+                />
+              </FixedAspectRatio>
             </a>
           </Grid.Item>
         )
@@ -90,9 +65,69 @@ const Lightbox = ({
     </Grid>
   )
 
+  const btnProps: ButtonProps = {
+    block: true,
+    style: { 
+      borderRadius: 0, 
+      height: 'var(--nav-height)',
+      background: 'transparent'
+    },
+  }
+
+  const content = (
+    <>
+      <Image
+        src={images[imageIndex].src}
+        width='100vw'
+        height='calc(100vh - var(--nav-height))'
+        alt={images[imageIndex].title || ''}
+        fit='contain'
+      />
+      <Space
+        className='w-100 actions'
+        justify='stretch'
+        align='center'
+        style={{ '--gap': '0px', borderTop: '1px solid var(--adm-color-border)' }}
+      >
+        <div>
+          <div className='web'>
+            {hasCaption || <span>&nbsp;</span>}
+          </div>
+          <div className='mobile'>
+            <Popover
+              content={hasCaption}
+              trigger='click'
+              placement='top-start'
+            >
+              <Button disabled={!hasCaption} {...btnProps}>
+                <InformationCircleOutline fontSize={24} />
+              </Button>
+            </Popover>
+          </div>
+        </div>
+        <Button disabled={!hasPrev} {...btnProps} onClick={() => setImageIndex(imageIndex - 1)}>
+          <LeftOutline fontSize={24} />
+        </Button>
+        <Button disabled={!hasNext} {...btnProps} onClick={() => setImageIndex(imageIndex + 1)}>
+          <RightOutline fontSize={24} />
+        </Button>
+        <Button {...btnProps} onClick={() => setVisible(false)}>
+          <CloseOutline fontSize={24} />
+        </Button>
+      </Space>
+    </>
+  )
+
   return (
     <div className='lightbox'>
       {grid}
+      <Modal
+        visible={visible}
+        content={content}
+        className='lightbox-modal'
+        maskStyle={{ background: 'var(--adm-color-box)' }}
+        closeOnMaskClick
+      />
     </div>
   )
 }
