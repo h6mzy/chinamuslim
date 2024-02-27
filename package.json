@@ -15,12 +15,11 @@
     "dayjs": "^1.11.10",
     "next": "^14.1.0",
     "react": "^18",
-    "react-dom": "^18",
-    "react-medium-image-zoom": "^5.1.10"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20.11.20",
-    "@types/react": "^18.2.58",
+    "@types/react": "^18.2.59",
     "@types/react-dom": "^18.2.19",
     "sass": "^1.71.1",
     "typescript": "^5"
