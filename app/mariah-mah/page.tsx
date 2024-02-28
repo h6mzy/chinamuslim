@@ -1,9 +1,12 @@
 'use client'
 
+import { Grid } from 'antd-mobile'
 import Heading from '../components/heading'
+import Responsive from '../components/responsive'
 import Title from '../components/title'
 import Video from '../components/video'
 import Gallery from '../components/viewer'
+import { GridItem } from 'antd-mobile/es/components/grid/grid'
 
 export default function Home() {
 
@@ -16,10 +19,10 @@ export default function Home() {
   )
 
   const images = [
-    { src: '/images/cambridge-certs/1.webp' },
-    { src: '/images/cambridge-certs/2.webp', title: 'Cambridge Certificate 2' },
-    { src: '/images/cambridge-certs/3.webp', title: 'Cambridge Certificate 3' },
+    { src: '/images/cambridge-cert.webp' }
   ]
+
+  const imageGallery = <Gallery images={images} />
 
   return (
     <main>
@@ -44,7 +47,15 @@ export default function Home() {
             <p>Kindly refer to page 142 of the publication - The 500 most influential Muslims in the world 2009.</p>
             <p>Besides being selected to be among 500 most influential Muslims in the world, she was honoured by Cambridge University Faculty of Islamic Arts for excellence in the promotion and service of Islam and the promotion of Chinese Muslim Culture in 2000.</p>
           </div>
-          <Gallery images={images} gridProps={{ columns: 3, gap: 'var(--adm-gap-sm)' }} thumbnails={images.length} thumbnailAspectRatio={[1,1]} thumbnailFit='cover' />
+          <Responsive
+            mobile={imageGallery}
+            web={
+              <Grid columns={3} gap='var(--adm-gap-sm)' className='bg-color-box'>
+                <GridItem />
+                <GridItem>{imageGallery}</GridItem>
+              </Grid>
+            }
+          />
         </div>
       </section>
     </main>
