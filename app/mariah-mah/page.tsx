@@ -1,9 +1,9 @@
 'use client'
 
 import Heading from '../components/heading'
-import Lightbox from '../components/lightbox'
 import Title from '../components/title'
 import Video from '../components/video'
+import Gallery from '../components/viewer'
 
 export default function Home() {
 
@@ -44,11 +44,7 @@ export default function Home() {
             <p>Kindly refer to page 142 of the publication - The 500 most influential Muslims in the world 2009.</p>
             <p>Besides being selected to be among 500 most influential Muslims in the world, she was honoured by Cambridge University Faculty of Islamic Arts for excellence in the promotion and service of Islam and the promotion of Chinese Muslim Culture in 2000.</p>
           </div>
-          <Lightbox 
-            images={images}
-            gridProps={{ columns: 3, gap: 'var(--adm-gap-sm)' }}
-            thumbnails={3}
-          />
+          <Gallery images={images} gridProps={{ columns: 3, gap: 'var(--adm-gap-sm)' }} thumbnails={images.length} thumbnailAspectRatio={[1,1]} thumbnailFit='cover' />
         </div>
       </section>
     </main>
