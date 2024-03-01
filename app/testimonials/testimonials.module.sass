@@ -3,11 +3,15 @@
   align-items: center
   border-bottom: 1px solid var(--adm-color-border)
 
-  .tabs
-    flex: 1
-    &:global(.adm-tabs-header)
-      border-bottom-width: 0
-  .more
-    font-size: var(--adm-font-size-9)
-    margin: 0 12px
-    transform: translateY(-2px)
+.tabs
+  flex: 1
+  :global(.adm-tabs-header)
+    border-bottom: 0
+
+.more
+  font-size: var(--adm-font-size-9)
+  margin: 0 12px
+  transform: translateY(-2px)
+
+.action
+  overflow-y: scroll

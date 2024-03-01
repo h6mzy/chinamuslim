@@ -4,14 +4,22 @@ import { DownOutline } from 'antd-mobile-icons'
 import { testimonials } from '../_lib/testimonials'
 import Title from '../components/title'
 import styles from './testimonials.module.sass'
-import { ActionSheet, Tabs } from 'antd-mobile'
+import { Button, Grid, Popup, Tabs } from 'antd-mobile'
 import { useState } from 'react'
 
 export default function Testimonials() {
 
-  const years = ['2015', '2016', '2017', '2018', '2019', '2020']
+  const years = (
+    [...new Set(testimonials.map(t => String(t.year)))]
+    .sort((a, b) => Number(b) - Number(a))
+  )
   const [tab, setTab] = useState(years[0])
   const [visible, setVisible] = useState(false)
+
+  const onBtnClick = (year:string) => {
+    setTab(year)
+    setVisible(false)
+  }
   
   return (
     <main>
@@ -32,13 +40,24 @@ export default function Testimonials() {
               <DownOutline className={styles.more} />
             </a>
           </div>
-          <ActionSheet
+          <Popup
             visible={visible}
-            actions={years.map(y => ({ text: `${y}`, key: y }))}
+            onMaskClick={() => setVisible(false)}
             onClose={() => setVisible(false)}
-            closeOnAction
-            onAction={action => setTab(String(action.key))}
-          />
+            bodyStyle={{ height: 'auto', maxHeight: '100vh' }}
+          >
+            <div className='container'>
+              <div className='pad'>
+                <Grid columns={3} gap='var(--adm-gap-sm)'>
+                  {years.map(year =>
+                    <Grid.Item key={year}>
+                      <Button block onClick={() => onBtnClick(year)}>{year}</Button>
+                    </Grid.Item>
+                  )}
+                </Grid>
+              </div>
+            </div>
+          </Popup>
         </div>
       </section>
     </main>
