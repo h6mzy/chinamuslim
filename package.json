@@ -10,18 +10,18 @@
     "check": "tsc --noEmit"
   },
   "dependencies": {
-    "antd-mobile": "^5.34.0",
+    "antd-mobile": "^5.37.1",
     "antd-mobile-icons": "^0.3.0",
-    "dayjs": "^1.11.10",
-    "next": "^14.1.1",
-    "react": "^18",
-    "react-dom": "^18"
+    "dayjs": "^1.11.12",
+    "next": "^14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20.11.24",
-    "@types/react": "^18.2.61",
-    "@types/react-dom": "^18.2.19",
-    "sass": "^1.71.1",
-    "typescript": "^5"
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "sass": "^1.77.8",
+    "typescript": "^5.5.4"
   }
 }
