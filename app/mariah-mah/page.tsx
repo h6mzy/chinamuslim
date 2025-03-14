@@ -1,8 +1,5 @@
 'use client'
 
-import Heading from '../components/heading'
-import Responsive from '../components/responsive'
-import Title from '../components/title'
 import Video from '../components/video'
 
 export default function Home() {
@@ -23,11 +20,6 @@ export default function Home() {
     <main>
       <section className='container'>
         <div className='pad'>
-          <Title title='[Mariah] Mah' style={{ marginTop: 0 }} />
-          <Heading
-            title='The 500 Most Influential Muslims In The World!'
-            weak
-          />
           <Video iframe={iframe} />
           <div className='text-justify'>
             <p>Mariah Mah a retired Singaporean educator in her 70's, has been working tirelessly Mariah Mah a retired Singaporean educator in her 70's, has been working tirelessly in the past 20 years to improve the lives of Muslims in China. She has been greatly involved in the Singapore Muslim outreach to poor Muslims in China. She was named by the Royal Islamic Strategic Studies Centre as one of the 500 most influential Muslims in the world in 2009 and has also been cited in a book published by The Prince Alwaleed Bin Talal Center for Muslim-Christian Understanding by Edmund A. Walsh from the School of Foreign Service Georgetown University - USA. She is the Honorary Chairman of Xiji Welfare Charity Centre (China) a government registered NGO in China's poorest region known as XIHAIGU (one of the world's poorest regions as recorded by UNESCO). As a result of the numerous charity projects initiated which benefitted and improve the lives of hundreds of farmers in the region, Sister was awarded the Honorary Citizen of Xiji County, Ningxia Province China.</p>

@@ -1,11 +1,12 @@
-:root:root
-  --adm-color-primary: #008F41
-  --adm-button-border-radius: .5rem
-  --adm-gap: 1rem
-  --adm-gap-sm: .5rem
-  --adm-font-family: 'Montserrat', 'Helvetica Neue', helvetica, roboto, arial, sans-serif
-  --adm-font-size-main: 1rem
-  --nav-height: 49px
+:root
+  --gap: 1rem
+  --font-size: 1rem
+  --font-small: .8rem
+  --font-large: 2rem
+  --line-height: 1.5
+
+*
+  box-sizing: border-box
 
 html
   font-size: 100%
@@ -14,20 +15,13 @@ body
   margin: 0
   font-size: 1rem
 
-main
-  min-height: calc(100vh - 98px)
-  box-sizing: border-box
-
-a
-  text-decoration: none
-
 sup, sub
   line-height: 1
 
 p, .p
-  font-size: 1rem
-  line-height: 1.5
-  margin-block: var(--adm-gap)
+  font-size: var(--font-size)
+  line-height: var(--line-height)
+  margin-block: var(--gap)
 
 h1, h2, h3, h4
   line-height: 1
@@ -41,115 +35,27 @@ h3
 h4
   font-size: 1.2rem
 
-.adm-tabs-header
-  border-bottom: 0
-
-.adm-button
-  line-height: 1
-  font-family: var(--adm-font-family)
-  padding: var(--adm-gap-sm) var(--adm-gap)
-
-.adm-space-block,
-.w-100
-  width: 100%
-
-.nav-height
-  height: var(--nav-height)
-
 .pad, .pad-y, .pad-t
-  padding-top: var(--adm-gap)
+  padding-top: var(--gap)
 .pad, .pad-y, .pad-b
-  padding-bottom: var(--adm-gap)
+  padding-bottom: var(--gap)
 .pad, .pad-x, .pad-l
-  padding-left: var(--adm-gap)
+  padding-left: var(--gap)
 .pad, .pad-x, .pad-r
-  padding-right: var(--adm-gap)
-
-.margin-0
-  margin: 0
+  padding-right: var(--gap)
 
 .text-center
   text-align: center
+.text-left
+  text-align: left
 .text-right
   text-align: right
 .text-justify
   text-align: justify
 .underline
-  text-decoration: none
+  text-decoration: underline
 .uppercase
   text-decoration: uppercase
 
 .relative
   position: relative
-.absolute
-  position: absolute
-
-.overflow-hidden
-  overflow: hidden
-
-.display-none
-  display: none
-.display-block
-  display: block
-.display-flex
-  display: flex
-
-.flex
-  display: flex
-.justify-center
-  justify-content: center
-.items-center
-  align-items: center
-
-.bg-color-box
-  background: var(--adm-color-box)
-
-.font-color-primary
-  color: var(--adm-color-primary)
-.font-color-secondary
-  color: var(--adm-color-text-secondary)
-.font-color-weak
-  color: var(--adm-color-weak)
-
-.align-stretch
-  align-items: stretch
-
-.call-to-actions
-  display: flex
-  gap: var(--adm-gap-sm)
-  justify-content: stretch
-  > *
-    min-width: 50%
-    flex: 1 1
-
-.tabs-borderless
-  .adm-tabs-header
-    border-bottom: 0
-
-.video-iframe
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-
-.show-on-lg
-  display: none
-
-@media (min-width: 992px)
-  :root
-    .hide-on-lg
-      display: none
-    .show-on-lg
-      display: block
-  .container
-    display: block
-    width: 768px
-    margin: auto
-  .heading
-    max-width: 537px
-  .call-to-actions
-    justify-content: flex-start
-    > *
-      min-width: calc(100% / 3)
-      flex: 0 0
