@@ -1,13 +1,75 @@
 .navbar
-  position: fixed
-  top: 0
-  left: 0
   width: 100%
   display: flex
   justify-content: space-between
   align-items: center
   padding: var(--gap)
-  background: rgba(0, 0, 0, .8)
-  backdrop-filter: blur(10px)
-  color: white
-  z-index: 1000
+
+.logo
+  text-decoration: none
+  color: var(--text-color)
+
+.logoStrong
+  color: var(--primary-color)
+
+.nav
+  display: none
+
+.leftList,
+.rightList
+  display: flex
+  flex-flow: column nowrap
+  align-items: stretch
+  padding-left: 0
+  margin: 0
+
+.item
+  flex: 1 0 auto
+  display: flex
+  justify-content: center
+  align-items: center
+
+.button, .donateButton
+  display: inline-block
+  padding: .7rem 2rem
+  color: var(--text-color)
+  text-decoration: none
+  text-transform: uppercase
+  transition: all .3s ease-out
+  &:hover
+    color: var(--primary-color)
+
+.donateButton
+  border: 1px solid var(--text-color)
+
+@media (min-width: 478px)
+  .logo
+    font-size: 1.5rem
+
+@media (min-width: 1200px)
+  .navbar
+    justify-content: stretch
+
+  .logo
+    padding: var(--gap) calc(var(--gap) * 2)
+  
+  .nav
+    display: block
+    flex-grow: 1
+
+  .leftList,
+  .rightList
+    flex-flow: row nowrap
+    justify-content: center
+
+  .leftList
+    justify-content: flex-start
+
+  .rightList
+    justify-content: flex-end
+
+  .item
+    flex: 0 0 auto
+
+  .donateButton
+    margin-left: 2rem

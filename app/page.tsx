@@ -5,7 +5,10 @@ export default function Home() {
     <main>
       <section className='container'>
         <div className='pad' style={{ height: '150dvh' }}>
-          Home
+          <p>Home</p>
+          <p>Home</p>
+          <p>Home</p>
+          <p>Home</p>
         </div>
       </section>
     </main>

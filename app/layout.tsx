@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import './global.sass'
-import { Montserrat } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import Navbar from './components/Navbar'
 import SiteFooter from './components/footer'
 import { project_details } from './_lib/project'
 
-const montserrat = Montserrat({ subsets: ['latin'] })
+const bodyFont = Poppins({ subsets: ['latin'], weight: ['300', '900'] })
 
 const baseUrl = 'https://chinamuslim.vercel.app'
 
@@ -66,7 +66,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={montserrat.className}>
+      <body className={`${bodyFont.className} ${bodyFont.className}`}>
         <Navbar />
         {children}
         <SiteFooter />
