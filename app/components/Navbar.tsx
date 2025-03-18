@@ -5,13 +5,15 @@ import styles from './Navbar.module.sass'
 import { AnimatePresence } from 'motion/react'
 import { useState } from 'react'
 import * as motion from 'motion/react-client'
+import Image from 'next/image'
 
 const leftNav = ["watch", "contact"]
 const rightNav = ["zakat", "projects", "testimonials"]
 
 const Logo = () => (
   <div className={styles.logo}>
-    <strong className={styles.logoStrong}>Chinamuslim</strong>.help
+    <Image src="/images/chinamuslim.svg" width={30} height={30} objectFit="contain" alt="Chinamuslim logo" />
+    <span><strong className={styles.logoStrong}>Chinamuslim</strong>.help</span>
   </div>
 )
 
