@@ -3,7 +3,6 @@
 import { donors } from './_lib/donors'
 import styles from './components/Home.module.sass'
 import layout from './components/Layout.module.sass'
-import slides from './components/Slides.module.sass'
 import Slides from './components/Slides'
 
 export default function Home() {
@@ -40,11 +39,12 @@ export default function Home() {
               <h2><strong>Our Generous Donors</strong></h2>
             </div>
             <Slides
+              slidesToShow={2}
               items={donors.map((item:any, index) => {
                 return (
                   <div 
                     key={index}
-                    className={slides.box}
+                    className={styles.box}
                     style={{ background: `url(${item.photo}?img=1) center center / cover no-repeat transparent` }}
                   />
                 )

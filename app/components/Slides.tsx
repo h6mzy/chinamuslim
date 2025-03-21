@@ -2,38 +2,57 @@
 
 import { AnimatePresence, motion, usePresenceData, wrap } from 'motion/react'
 import React, { forwardRef, SVGProps, useState } from 'react'
-
 import styles from './Slides.module.sass'
 
-const Slides = ({ items = [] }: { items?: any[] }) => {
+const Slides = ({
+  items = [],
+  slidesToShow = 2,
+  loop = true, // Add loop prop (default is true)
+}: {
+  items?: any[]
+  slidesToShow?: number
+  loop?: boolean // Option to control looping behavior
+}) => {
   const [direction, setDirection] = useState<1 | -1>(1)
   const [selectedIndex, setSelectedIndex] = useState(0)
 
+  // tofix: looping
   function setSlide(newDirection: 1 | -1) {
-    const nextIndex = wrap(0, items.length, selectedIndex + newDirection)
+    let nextIndex = selectedIndex + newDirection
+    if (loop) {
+      // Looping logic: Use wrap to cycle through slides if 'loop' is true
+      nextIndex = wrap(0, items.length - slidesToShow, nextIndex)
+    } else {
+      // Non-looping logic: Prevent index from going out of bounds
+      if (nextIndex < 0) nextIndex = 0
+      if (nextIndex >= items.length) nextIndex = items.length - slidesToShow
+    }
     setSelectedIndex(nextIndex)
     setDirection(newDirection)
   }
+
+  // Calculate the range of items to display
+  const visibleItems = items.slice(selectedIndex, selectedIndex + slidesToShow)
 
   return (
     <div className={styles.container}>
       <motion.button
         initial={false}
         aria-label="Previous"
-        className={styles.button}
+        className={styles.button} // tofix - disable at the end of no-loop
         onClick={() => setSlide(-1)}
         whileFocus={{ outline: '1px solid var(--primary-color)' }}
         whileTap={{ scale: .9 }}
       >
         <ArrowLeft />
       </motion.button>
-      <AnimatePresence
-        custom={direction}
-        initial={false}
-        mode="popLayout"
-      >
-        <Slide key={selectedIndex}>{items[selectedIndex]}</Slide>
+
+      <AnimatePresence custom={direction} initial={false} mode="popLayout">
+        {visibleItems.map((item, index) => (
+          <Slide key={selectedIndex + index}>{item}</Slide>
+        ))}
       </AnimatePresence>
+
       <motion.button
         initial={false}
         aria-label="Next"
@@ -61,10 +80,10 @@ const Slide = forwardRef<HTMLDivElement, { children?: React.ReactNode }>(
           opacity: 1,
           x: 0,
           transition: {
-            delay: 0.2,
+            delay: .2,
             type: 'spring',
-            visualDuration: 0.3,
-            bounce: 0.4,
+            visualDuration: .3,
+            bounce: .4,
           },
         }}
         exit={{ opacity: 0, x: direction * -50 }}
