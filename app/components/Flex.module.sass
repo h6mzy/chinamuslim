@@ -7,17 +7,26 @@
 
 .row
   flex-direction: row
+  > div
+    flex: 1 0 auto
+
+.twoColumn > div
+  width: calc((100% - var(--gap)) / 2)
+.threeColumn > div
+  width: calc((100% - (var(--gap) * 2)) / 3)
+.fourColumn > div
+  width: calc((100% - (var(--gap) * 3)) / 4)
 
 .column
   flex-direction: column
 
-.wrap, .flex
+.wrap, .row
   flex-wrap: wrap
 
 .nowrap
   flex-wrap: nowrap
 
-.justifyStart, .flex
+.justifyStart, .row
   justify-content: flex-start
 .justifyEnd
   justify-content: flex-end
@@ -30,7 +39,7 @@
 .justifyStretch
   justify-content: stretch
 
-.alignStart, .flex
+.alignStart, .row
   align-items: flex-start
 .alignEnd
   align-items: flex-end
