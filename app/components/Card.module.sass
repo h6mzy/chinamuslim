@@ -1,10 +1,8 @@
 .card
-  height: 300px
   width: 100%
+  aspect-ratio: 5 / 4
   border-radius: 1rem
-  position: relative
   overflow: visible
-  z-index: 1
   box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, .25)
   display: flex
   justify-content: center
@@ -14,11 +12,19 @@
 .expandedCard
   width: 90%
   max-width: 600px
+  aspect-ratio: 5 / 4
   background: #fff
   padding: 1rem
   border-radius: 1rem
   box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, .25)
-  transition: transform 0.3s ease-in-out
+  transition: all .3s ease-in-out
+  z-index: 101
+  overflow-x: hidden
+  overflow-y: auto
+  scrollbar-width: none // Firefox
+  -ms-overflow-style: none // Internet Explorer 10+
+  &::-webkit-scrollbar
+    display: none // Safari and Chrome
 
 .expandedCardWrapper
   position: fixed
@@ -26,8 +32,10 @@
   left: 0
   width: 100dvw
   height: 100dvh
-  background: rgba(0, 0, 0, .5)
+  background: rgba(0, 0, 0, .8)
+  transition: all .3s ease-in
   display: flex
   align-items: center
   justify-content: center
   z-index: 100
+  overflow: hidden

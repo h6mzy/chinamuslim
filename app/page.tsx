@@ -10,6 +10,7 @@ import { projects } from './_lib/projects'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import ExpandedCard from './components/ExpandedCard'
+import ProjectsSection from './components/Projects'
 
 export default function Home() {
   const [selectedTitle, setSelectedTitle] = useState<string | null>(null)
@@ -30,28 +31,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
-        <div className={layout.container}>
-          <div className={layout.pad}>
-            <div className={layout.autoAlign}>
-              <h2><strong>Waqaf Projects</strong></h2>
-            </div>
-            <div className={`${flex.row} ${flex.twoColumn}`}>
-              {projects.map((project, index) =>
-                <motion.div key={index} onClick={() => setSelectedTitle(project.title)}>
-                  <Card title={project.title} />
-                </motion.div>
-              )}
-            </div>
-            {/* Modal for expanded card */}
-            <AnimatePresence>
-              {selectedTitle && (
-                <ExpandedCard title={selectedTitle} onClose={() => setSelectedTitle(null)} />
-              )}
-            </AnimatePresence>
-          </div>
-        </div>
-      </section>
+      <ProjectsSection />
       <section>
         <div className={layout.container}>
           <div className={layout.pad}>
