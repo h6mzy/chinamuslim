@@ -4,16 +4,9 @@ import { donors } from './_lib/donors'
 import styles from './components/Home.module.sass'
 import layout from './components/Layout.module.sass'
 import Slides from './components/Slides'
-import Card from './components/Card'
-import flex from './components/Flex.module.sass'
-import { projects } from './_lib/projects'
-import { useState } from 'react'
-import { AnimatePresence, motion } from 'motion/react'
-import ExpandedCard from './components/ExpandedCard'
 import ProjectsSection from './components/Projects'
 
 export default function Home() {
-  const [selectedTitle, setSelectedTitle] = useState<string | null>(null)
   return (
     <main>
       <section>
