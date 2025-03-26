@@ -19,7 +19,7 @@ export default function ProjectsSection() {
             <div className={layout.autoAlign}>
               <h2><strong>Waqaf Projects</strong></h2>
             </div>
-            <div className={`${flex.row} ${flex.twoColumn}`}>
+            <div className={`${flex.row} ${flex.threeColumn}`}>
               {projects.map((project, index) => (
                 <motion.div 
                   key={index} 
@@ -38,7 +38,7 @@ export default function ProjectsSection() {
       <AnimatePresence>
         {selectedId && (
           <ExpandedCard
-            project={selectedId}
+            project={projects.find(p => p.id === selectedId)}
             index={projects.findIndex(p => p.id === selectedId)} onClose={() => setSelectedId(null)} 
           />
         )}

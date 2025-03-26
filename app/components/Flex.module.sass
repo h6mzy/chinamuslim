@@ -8,14 +8,7 @@
 .row
   flex-direction: row
   > div
-    flex: 1 0 auto
-
-.twoColumn > div
-  width: calc((100% - var(--gap)) / 2)
-.threeColumn > div
-  width: calc((100% - (var(--gap) * 2)) / 3)
-.fourColumn > div
-  width: calc((100% - (var(--gap) * 3)) / 4)
+    width: 100%
 
 .column
   flex-direction: column
@@ -60,3 +53,11 @@
   flex-grow: 1
 .shrink1
   flex-shirnk: 1
+
+@media (min-width: 768px)
+  .twoColumn > div
+    width: calc((100% - var(--gap)) / 2)
+  .threeColumn > div
+    width: calc((100% - (var(--gap) * 2)) / 3)
+  .fourColumn > div
+    width: calc((100% - (var(--gap) * 3)) / 4)
