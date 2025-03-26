@@ -5,6 +5,7 @@ import styles from './components/Home.module.sass'
 import layout from './components/Layout.module.sass'
 import Slides from './components/Slides'
 import ProjectsSection from './components/Projects'
+import NotificationStack from './components/NotificationStack'
 
 export default function Home() {
   return (
@@ -21,6 +22,13 @@ export default function Home() {
             >
               More info
             </button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className={layout.container}>
+          <div className={layout.pad}>
+            <NotificationStack />
           </div>
         </div>
       </section>
@@ -52,3 +60,6 @@ export default function Home() {
 
 //https://codesandbox.io/p/sandbox/framer-motion-sharedlayout-dk5pfh?file=%2Fsrc%2FApp.js%3A140%2C28
 //https://codesandbox.io/p/sandbox/framer-motion-ios-notifications-0sct9o?file=%2Fsrc%2FApp.js
+//https://framermotionexamples.com/example/app-store-ui-using-react-and-framer-motion
+//https://codesandbox.io/p/sandbox/app-store-ui-using-react-and-framer-motion-ecgc2?file=%2Fsrc%2Findex.tsx
+//
