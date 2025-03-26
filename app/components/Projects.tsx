@@ -9,7 +9,7 @@ import layout from '../components/Layout.module.sass'
 import flex from '../components/Flex.module.sass'
 
 export default function ProjectsSection() {
-  const [selectedTitle, setSelectedTitle] = useState<string | null>(null)
+  const [selectedId, setSelectedId] = useState<string | null>(null)
 
   return (
     <LayoutGroup>
@@ -23,11 +23,10 @@ export default function ProjectsSection() {
               {projects.map((project, index) => (
                 <motion.div 
                   key={index} 
-                  layoutId={project.title} 
-                  onClick={() => setSelectedTitle(project.title)}
-                  style={{ background: `url(https://i.pravatar.cc/768?img=${index+1}) center center / cover no-repeat transparent`, borderRadius: '1rem' }}
+                  layoutId={project.id} 
+                  onClick={() => setSelectedId(project.id)}
                 >
-                  <Card title={project.title} />
+                  <Card project={project} index={index} />
                 </motion.div>
               ))}
             </div>
@@ -37,8 +36,11 @@ export default function ProjectsSection() {
 
       {/* Modal for expanded card */}
       <AnimatePresence>
-        {selectedTitle && (
-          <ExpandedCard title={selectedTitle} onClose={() => setSelectedTitle(null)} />
+        {selectedId && (
+          <ExpandedCard
+            project={selectedId}
+            index={projects.findIndex(p => p.id === selectedId)} onClose={() => setSelectedId(null)} 
+          />
         )}
       </AnimatePresence>
     </LayoutGroup>

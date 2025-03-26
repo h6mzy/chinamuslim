@@ -2,12 +2,16 @@
   width: 100%
   aspect-ratio: 5 / 4
   border-radius: 1rem
-  overflow: visible
+  overflow: hidden
   box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, .25)
   display: flex
   justify-content: center
-  align-items: center
-  //background-color: #fff
+  align-items: flex-end
+  font-weight: bold
+  color: #fff
+  text-shadow: var(--text-shadow)
+  padding: 1rem
+  line-height: 1.2
 
 .expandedCard
   width: calc(100% - (var(--gap) * 2))
@@ -15,7 +19,6 @@
   height: calc(100% - (var(--gap) * 2))
   max-height: 768px
   background: #fff
-  padding: 1rem
   border-radius: 1rem
   box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, .25)
   transition: all .3s ease-in-out
@@ -40,3 +43,10 @@
   justify-content: center
   z-index: 100
   overflow: hidden
+
+.image
+  position: relative
+  aspect-ratio: 5 / 4
+
+.body
+  padding: 1rem
