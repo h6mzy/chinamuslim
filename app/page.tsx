@@ -5,7 +5,6 @@ import styles from './components/Home.module.sass'
 import layout from './components/Layout.module.sass'
 import Slides from './components/Slides'
 import ProjectsSection from './components/Projects'
-import NotificationStack from './components/NotificationStack'
 
 export default function Home() {
   return (
@@ -22,13 +21,6 @@ export default function Home() {
             >
               More info
             </button>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className={layout.container}>
-          <div className={layout.pad}>
-            <NotificationStack />
           </div>
         </div>
       </section>
