@@ -5,11 +5,13 @@ import styles from './components/Home.module.sass'
 import layout from './components/Layout.module.sass'
 import Slides from './components/Slides'
 import ProjectsSection from './components/Projects'
+import SplashScreen from './components/SplashScreen'
 
 export default function Home() {
   return (
     <main>
       <section>
+        <SplashScreen />
         <div className={styles.container}>
           <video className={styles.video} autoPlay loop muted playsInline>
             <source src="/videos/home.mp4" type="video/mp4" />
