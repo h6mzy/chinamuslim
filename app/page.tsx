@@ -27,6 +27,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      
+      <hr />
       <ProjectsSection />
     </main>
   )
