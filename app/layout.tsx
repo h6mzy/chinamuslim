@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import '../styles/globals.sass'
 import { Poppins } from 'next/font/google'
-import { project_details } from './_lib/project'
-import Navbar from '@/app/components/Navbar'
-import SiteFooter from '@/app/components/SiteFooter'
+import { project_details } from '@/lib/project'
+import Navbar from '@/components/Navbar'
+import SiteFooter from '@/components/SiteFooter'
 
 const bodyFont = Poppins({ subsets: ['latin'], weight: ['300', '900'] })
 
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Massage For Mom - Prenatal & Postnatal massage service',
+        alt: project_details.title,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Massage For Mom - Prenatal & Postnatal Massage Services in Singapore',
+    title: project_details.title,
     description: project_details.description,
     images: ['/images/og-image.png'],
   },

@@ -1,6 +1,6 @@
 'use client'
 
-import { project_details } from '../../_lib/project'
+import { project_details } from '../../lib/project'
 import dayjs from 'dayjs'
 import styles from '@/styles/Layout.module.sass'
 

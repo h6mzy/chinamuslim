@@ -2,9 +2,7 @@
 
 import styles from '@/styles/Home.module.sass'
 import layout from '@/styles/Layout.module.sass'
-import ProjectsSection from '@/app/components/Projects'
-import SplashScreen from '@/app/components/SplashScreen'
-import CardList from './components/CardList'
+import SplashScreen from '@/components/SplashScreen'
 
 export default function HomePage() {
   return (
@@ -28,9 +26,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <CardList />
-      <hr />
-      <ProjectsSection />
     </main>
   )
 }
