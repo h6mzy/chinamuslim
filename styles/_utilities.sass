@@ -44,55 +44,6 @@
 .smallGap
   gap: calc(var(--gap) / 2)
 
-.row
-  flex-direction: row
-  > div
-    width: 100%
-
-.column
-  flex-direction: column
-
-.wrap, .row
-  flex-wrap: wrap
-
-.nowrap
-  flex-wrap: nowrap
-
-.justifyStart, .row
-  justify-content: flex-start
-.justifyEnd
-  justify-content: flex-end
-.justifyCenter
-  justify-content: center
-.justifyEvenly
-  justify-content: space-evenly
-.justifyBetween
-  justify-content: space-between
-.justifyStretch
-  justify-content: stretch
-
-.alignStart, .row
-  align-items: flex-start
-.alignEnd
-  align-items: flex-end
-.alignCenter
-  align-items: center
-.alignEvenly
-  align-items: space-evenly
-.alignBetween
-  align-items: space-between
-.alignStretch
-  align-items: stretch
-
-.grow0
-  flex-grow: 0
-.shrink0
-  flex-shirnk: 0
-.grow1
-  flex-grow: 1
-.shrink1
-  flex-shirnk: 1
-
 @media (min-width: 768px)
   .twoColumn > div
     width: calc((100% - var(--gap)) / 2)
