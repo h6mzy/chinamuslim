@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'motion/react'
 import styles from './SplashScreen.module.sass'
 import { slides } from './splashSlides'
 import { useSplashVisibility, useSlideProgression } from './hooks'
-import { splashFade, logoAnim, textAnim } from './animations'
+import { splashFade, slideAnim } from './animations'
 
 export default function SplashScreen() {
   const { visible, setVisible } = useSplashVisibility()
@@ -38,21 +38,19 @@ export default function SplashScreen() {
         {visible && (
           <motion.div className={styles.splash} {...splashFade}>
             <div className={styles.content}>
-              <motion.div className={styles.logo} {...logoAnim}>
+              <motion.div className={styles.logo} {...slideAnim}>
                 <img src="/images/chinamuslim.svg" alt="Hands making doa" />
                 <h4><strong>Chinamuslim</strong>.help</h4>
               </motion.div>
-              <div className={styles.textWrapper}>
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentSlide}
-                    className={styles.text}
-                    {...textAnim}
-                  >
-                    {slides[currentSlide]}
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  className={styles.text}
+                  {...slideAnim}
+                >
+                  {slides[currentSlide]}
+                </motion.div>
+              </AnimatePresence>
             </div>
             
             <div className={styles.buttons}>

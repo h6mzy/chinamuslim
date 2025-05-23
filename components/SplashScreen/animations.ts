@@ -5,13 +5,7 @@ export const splashFade = {
   transition: { duration: 1 },
 }
 
-export const logoAnim = {
-  initial: { y: 10, scale: .9, opacity: 0 },
-  animate: { y: 0, scale: 1, opacity: 1 },
-  transition: { duration: .5, delay: .2 },
-}
-
-export const textAnim = {
+export const slideAnim = {
   initial: { opacity: 0, y: 10 },
   animate: { opacity: 1, y: 0 },
   exit: { opacity: 0, y: -10 },

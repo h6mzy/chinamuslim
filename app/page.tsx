@@ -7,7 +7,6 @@ export default function HomePage() {
   return (
     <main>
       <section>
-        <SplashScreen />
         <div className={styles.container}>
           <video className={styles.video} autoPlay loop muted playsInline>
             <source src="/videos/home.mp4" type="video/mp4" />
@@ -24,6 +23,7 @@ export default function HomePage() {
             </button>
           </div>
         </div>
+        <SplashScreen />
       </section>
     </main>
   )
