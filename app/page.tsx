@@ -2,6 +2,7 @@
 
 import SplashScreen from '@/components/SplashScreen'
 import FullPageVideo from '@/components/FullPageVideo'
+import ProjectsGrid from '@/components/ProjectsGrid'
 
 export default function HomePage() {
   return (
@@ -13,12 +14,7 @@ export default function HomePage() {
       <section>
         <div className='container pad'>
           <h2>Recent Projects</h2>
-          <div className='grid'>
-            <div><hr /></div>
-            <div><hr /></div>
-            <div><hr /></div>
-            <div><hr /></div>
-          </div>
+          <ProjectsGrid />
         </div>
       </section>
     </main>
