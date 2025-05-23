@@ -13,8 +13,11 @@ export default function HomePage() {
       <section>
         <div className='container pad'>
           <h2>Recent Projects</h2>
-          <div className='row threeColumn'>
-            
+          <div className='grid'>
+            <div><hr /></div>
+            <div><hr /></div>
+            <div><hr /></div>
+            <div><hr /></div>
           </div>
         </div>
       </section>
