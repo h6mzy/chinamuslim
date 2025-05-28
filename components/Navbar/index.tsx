@@ -21,9 +21,9 @@ export default function Navbar() {
       <nav className={styles.nav}>
         <ul className={styles.leftList}>
           <li className={styles.item}>
-            <Donate />
+            <Donate onClick={close} />
           </li>
-          <ListItems items={leftNav} />
+          <ListItems onClick={close} items={leftNav} />
         </ul>
       </nav>
       
@@ -35,7 +35,7 @@ export default function Navbar() {
       {/* Right navigation */}
       <nav className={styles.nav}>
         <ul className={styles.rightList}>
-          <ListItems items={rightNav} />
+          <ListItems onClick={close} items={rightNav} />
         </ul>
       </nav>
       
@@ -75,10 +75,10 @@ export default function Navbar() {
                 <nav className={styles.mobileNav}>
                   <ul className={styles.leftList}>
                     <li className={styles.item}>
-                      <Donate />
+                      <Donate onClick={close} />
                     </li>
                     {/* Combined nav items */}
-                    <ListItems items={mobileNav} />
+                    <ListItems onClick={close} items={mobileNav} />
                   </ul>
                 </nav>
               </div>
