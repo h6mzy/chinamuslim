@@ -14,7 +14,7 @@ export default function Card({ title, label, photoUrl, children }: CardProps) {
     <div className={styles.card}>
       {photoUrl && <img src={photoUrl} alt="Card Image" className={styles.photo} />}
       
-      <header className={styles.meta}>
+      <header className={`${styles.meta} smallGap`}>
         {label &&
           (isString(label) ? (
             <h4 className={styles.label}>{label}</h4>
