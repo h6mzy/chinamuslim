@@ -2,10 +2,24 @@ import { projects } from '@/lib/projects'
 import Link from 'next/link'
 import Card from '../Card'
 
-export default function ProjectsGrid() {
+interface ProjectsGridProps {
+  categories?: string[]
+}
+
+export default function ProjectsGrid({ categories }: ProjectsGridProps) {
+  const lowerCategories = categories?.map(c => c.toLowerCase())
+
+  const filteredProjects = !lowerCategories || lowerCategories.length === 0
+    ? projects
+    : projects.filter(project =>
+        project.categories.some(cat =>
+          lowerCategories.includes(cat.toLowerCase())
+        )
+      )
+
   return (
     <div className="grid">
-      {projects.map((project, index) => 
+      {filteredProjects.map((project, index) => (
         <Link
           key={index}
           href={`/project/${project.id}`}
@@ -17,7 +31,7 @@ export default function ProjectsGrid() {
             photoUrl={project.photoUrl}
           />
         </Link>
-      )}
+      ))}
     </div>
   )
 }
