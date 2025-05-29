@@ -24,7 +24,7 @@ export default async function ProjectsPage({
       <section>
         <div className="container pad">
           <div className="textCenter">
-            <h1>{categoryLabel} Projects</h1>
+            <h1><strong>{categoryLabel}</strong> Projects</h1>
             <p className="textWeak">{filteredProjects.length} found.</p>
           </div>
 
