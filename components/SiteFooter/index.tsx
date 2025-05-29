@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 
 const SiteFooter = () => {
   return (
-    <div className="pad">
+    <div className="container pad textCenter">
       <span>&copy; {dayjs().format('YYYY')} {project_details.title}</span>
     </div>
   )

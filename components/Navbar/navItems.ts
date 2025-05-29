@@ -4,7 +4,7 @@ export const leftNav = [
 ]
 
 export const rightNav = [
-  { label: "Zakat", key: "/zakat", },
+  { label: "Zakat", key: "projects/zakat", },
   { label: "Projects", key: "projects", },
   { label: "Testimonials", key: "testimonials", },
 ]

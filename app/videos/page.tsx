@@ -7,8 +7,7 @@ export default function Contact() {
     <main>
       <section>
         <div className="container pad textCenter">
-          <h1>Contact</h1>
-          <p>For enquiries, please email us at <a href={`mailto:${project_details.email}`}>{project_details.email}</a></p>
+          <h1>Videos</h1>
         </div>
       </section>
     </main>
