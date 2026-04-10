@@ -42,7 +42,7 @@ body {
 
 header, .bottom {
   display: flex;
-  gap: var(--space-sm);;
+  gap: var(--space-sm);
   align-items: center;
   flex: none;
 }
